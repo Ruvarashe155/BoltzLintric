@@ -1,0 +1,436 @@
+{% load static %}
+
+<!DOCTYPE html> <html lang="en"> <head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    {% block title %}
+        Company Website
+    {% endblock %}
+</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head> <body class="min-h-screen bg-white text-slate-900 antialiased">
+<!-- =================================
+     NAVIGATION
+================================== -->
+
+<header
+    class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur"
+>
+
+    <div
+        class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8"
+    >
+
+        <!-- LOGO -->
+
+        <a
+            href="{% url 'home' %}"
+            class="text-xl font-extrabold tracking-tight text-slate-950"
+        >
+            Boltz Lintric Enterprises (Pvt) Ltd
+        </a>
+
+
+        <!-- DESKTOP NAVIGATION -->
+
+        <nav class="hidden items-center gap-8 md:flex">
+
+            <a
+                href="{% url 'home' %}"
+                class="text-sm font-medium text-slate-700 transition hover:text-blue-600"
+            >
+                Home
+            </a>
+
+            <a
+                href="{% url 'about' %}"
+                class="text-sm font-medium text-slate-700 transition hover:text-blue-600"
+            >
+                About
+            </a>
+
+            <a
+                href="{% url 'services' %}"
+                class="text-sm font-medium text-slate-700 transition hover:text-blue-600"
+            >
+                Services
+            </a>
+
+            <a
+                href="{% url 'projects' %}"
+                class="text-sm font-medium text-slate-700 transition hover:text-blue-600"
+            >
+                Projects
+            </a>
+
+            <a
+                href="{% url 'team' %}"
+                class="text-sm font-medium text-slate-700 transition hover:text-blue-600"
+            >
+                Team
+            </a>
+
+            <a
+                href="{% url 'contact' %}"
+                class="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700"
+            >
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+            id="mobile-menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            class="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-100 md:hidden"
+        >
+
+            <!-- Hamburger icon -->
+
+            <svg
+                id="menu-open-icon"
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+
+            </svg>
+
+
+            <!-- Close icon -->
+
+            <svg
+                id="menu-close-icon"
+                class="hidden h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+
+            </svg>
+
+        </button>
+
+    </div>
+
+
+    <!-- =================================
+         MOBILE NAVIGATION
+    ================================== -->
+
+    <div
+        id="mobile-menu"
+        class="hidden border-t border-slate-200 bg-white md:hidden"
+    >
+
+        <nav class="mx-auto max-w-7xl px-5 py-4 sm:px-6">
+
+            <div class="flex flex-col">
+
+                <a
+                    href="{% url 'home' %}"
+                    class="border-b border-slate-100 py-4 text-sm font-medium text-slate-700 transition hover:text-blue-600"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="{% url 'about' %}"
+                    class="border-b border-slate-100 py-4 text-sm font-medium text-slate-700 transition hover:text-blue-600"
+                >
+                    About
+                </a>
+
+                <a
+                    href="{% url 'services' %}"
+                    class="border-b border-slate-100 py-4 text-sm font-medium text-slate-700 transition hover:text-blue-600"
+                >
+                    Services
+                </a>
+
+                <a
+                    href="{% url 'projects' %}"
+                    class="border-b border-slate-100 py-4 text-sm font-medium text-slate-700 transition hover:text-blue-600"
+                >
+                    Projects
+                </a>
+
+                <a
+                    href="{% url 'team' %}"
+                    class="border-b border-slate-100 py-4 text-sm font-medium text-slate-700 transition hover:text-blue-600"
+                >
+                    Team
+                </a>
+
+                <a
+                    href="{% url 'contact' %}"
+                    class="mt-4 rounded-lg bg-blue-600 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-700"
+                >
+                    Contact Us
+                </a>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =================================
+     MAIN CONTENT
+================================== -->
+
+<main>
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<!-- =================================
+     FOOTER
+================================== -->
+
+<footer class="bg-slate-950 text-white">
+
+    <div
+        class="mx-auto max-w-7xl px-5 py-12 sm:px-6 lg:px-8"
+    >
+
+        <div class="grid gap-10 md:grid-cols-3">
+
+
+            <!-- COMPANY -->
+
+            <div>
+
+                <h3 class="text-lg font-bold">
+                    BOLTZ LINTRIC ENTERPRISES (Pvt) Ltd
+                </h3>
+
+                <p
+                    class="mt-4 max-w-sm text-sm leading-6 text-slate-400"
+                >
+                    Building modern solutions for
+                    growing businesses.
+                </p>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div>
+
+                <h3 class="font-semibold">
+                    Quick Links
+                </h3>
+
+                <div
+                    class="mt-4 flex flex-col gap-3 text-sm text-slate-400"
+                >
+
+                    <a
+                        href="{% url 'about' %}"
+                        class="transition hover:text-white"
+                    >
+                        About
+                    </a>
+
+                    <a
+                        href="{% url 'services' %}"
+                        class="transition hover:text-white"
+                    >
+                        Services
+                    </a>
+
+                    <a
+                        href="{% url 'projects' %}"
+                        class="transition hover:text-white"
+                    >
+                        Projects
+                    </a>
+
+                    <a
+                        href="{% url 'team' %}"
+                        class="transition hover:text-white"
+                    >
+                        Team
+                    </a>
+
+                    <a
+                        href="{% url 'contact' %}"
+                        class="transition hover:text-white"
+                    >
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div>
+
+                <h3 class="font-semibold">
+                    Contact
+                </h3>
+
+                <div
+                    class="mt-4 space-y-3 text-sm text-slate-400"
+                >
+
+                    <p>
+                    boltzlintric@gmail.com
+                    </p>
+
+                    <p>
+                        +263 771054715
+                    </p>
+
+                    <p>
+                        Harare, Zimbabwe
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div
+            class="mt-10 border-t border-slate-800 pt-6 text-sm text-slate-500"
+        >
+
+            <!-- <p>
+                © {% now "Y" %} BoltzLintric.
+                All rights reserved.
+            </p> -->
+
+             <a
+            href="{% url 'admin:login' %}"
+            class="inline-flex items-center gap-2 text-sm text-slate-500 transition hover:text-blue-400"
+        >
+
+            <span>
+                Admin Login
+            </span>
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =================================
+     MOBILE MENU JAVASCRIPT
+================================== -->
+
+<script>
+
+    const menuButton =
+        document.getElementById('mobile-menu-button');
+
+    const mobileMenu =
+        document.getElementById('mobile-menu');
+
+    const openIcon =
+        document.getElementById('menu-open-icon');
+
+    const closeIcon =
+        document.getElementById('menu-close-icon');
+
+
+    menuButton.addEventListener('click', function () {
+
+        mobileMenu.classList.toggle('hidden');
+
+        openIcon.classList.toggle('hidden');
+
+        closeIcon.classList.toggle('hidden');
+
+
+        const isOpen =
+            !mobileMenu.classList.contains('hidden');
+
+
+        menuButton.setAttribute(
+            'aria-expanded',
+            isOpen
+        );
+
+    });
+
+
+    // Close menu after clicking a link
+
+    const mobileLinks =
+        mobileMenu.querySelectorAll('a');
+
+
+    mobileLinks.forEach(function (link) {
+
+        link.addEventListener('click', function () {
+
+            mobileMenu.classList.add('hidden');
+
+            openIcon.classList.remove('hidden');
+
+            closeIcon.classList.add('hidden');
+
+            menuButton.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+
+        });
+
+    });
+
+</script>
+
+</body> </html>

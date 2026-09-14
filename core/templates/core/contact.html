@@ -1,0 +1,476 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact Us | BoltzLintric
+{% endblock %}
+
+{% block content %}
+
+<!-- ========================================= HERO ========================================= --> <section class="relative overflow-hidden bg-slate-950">
+<div
+    class="absolute -right-40 -top-40 h-[450px] w-[450px] rounded-full bg-blue-600/20 blur-3xl"
+></div>
+
+<div
+    class="absolute -bottom-40 -left-40 h-[450px] w-[450px] rounded-full bg-indigo-600/20 blur-3xl"
+></div>
+
+
+<div
+    class="relative mx-auto max-w-7xl px-5 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-36"
+>
+
+    <div class="max-w-3xl">
+
+        <span
+            class="text-sm font-bold tracking-[0.2em] text-blue-400"
+        >
+            CONTACT US
+        </span>
+
+
+        <h1
+            class="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+        >
+            Let's build something
+            <span class="block text-blue-500">
+                great together.
+            </span>
+        </h1>
+
+
+        <p
+            class="mt-6 max-w-2xl text-lg leading-8 text-slate-300"
+        >
+            Have a project, question or idea?
+            We'd love to hear from you.
+        </p>
+
+    </div>
+
+</div>
+
+</section> <!-- ========================================= CONTACT SECTION ========================================= --> <section class="bg-white py-20 sm:py-28">
+<div
+    class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8"
+>
+
+    <div
+        class="grid gap-12 lg:grid-cols-2 lg:gap-20"
+    >
+
+
+        <!-- =================================
+             CONTACT INFORMATION
+        ================================== -->
+
+        <div>
+
+            <span
+                class="text-sm font-bold tracking-[0.2em] text-blue-600"
+            >
+                GET IN TOUCH
+            </span>
+
+
+            <h2
+                class="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+            >
+                We'd love to hear from you.
+            </h2>
+
+
+            <p
+                class="mt-5 max-w-xl text-lg leading-8 text-slate-600"
+            >
+                Tell us a little about your project and we'll
+                get back to you as soon as possible.
+            </p>
+
+
+            <!-- CONTACT DETAILS -->
+
+            <div class="mt-10 space-y-7">
+
+
+                <!-- EMAIL -->
+
+                <div class="flex gap-5">
+
+                    <div
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600"
+                    >
+                        @
+                    </div>
+
+                    <div>
+
+                        <p
+                            class="text-sm font-bold uppercase tracking-wider text-slate-500"
+                        >
+                            Email
+                        </p>
+
+                        <a
+                            href="mailto:hello@company.com"
+                            class="mt-1 block font-semibold text-slate-950 hover:text-blue-600"
+                        >
+                            boltzlintric@gmail.com
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="flex gap-5">
+
+                    <div
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600"
+                    >
+                        ☎
+                    </div>
+
+                    <div>
+
+                        <p
+                            class="text-sm font-bold uppercase tracking-wider text-slate-500"
+                        >
+                            Phone
+                        </p>
+
+                        <a
+                            href="tel:+263790097515"
+                            class="mt-1 block font-semibold text-slate-950 hover:text-blue-600"
+                        >
+                            <!-- +263771054715 -->
+                             +263790097515
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="flex gap-5">
+
+                    <div
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600"
+                    >
+                        ●
+                    </div>
+
+                    <div>
+
+                        <p
+                            class="text-sm font-bold uppercase tracking-wider text-slate-500"
+                        >
+                            Location
+                        </p>
+
+                        <p
+                            class="mt-1 font-semibold text-slate-950"
+                        >
+                            Harare, Zimbabwe
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- EXTRA MESSAGE -->
+
+            <div
+                class="mt-12 rounded-2xl bg-slate-950 p-7"
+            >
+
+                <p
+                    class="text-lg font-semibold text-white"
+                >
+                    Let's discuss your next project.
+                </p>
+
+                <p
+                    class="mt-2 leading-7 text-slate-400"
+                >
+                    Whether it's a new website, business
+                    solution or technology consultation,
+                    we're ready to help.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             CONTACT FORM
+        ================================== -->
+
+        <div
+            class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8 lg:p-10"
+        >
+
+            <h2
+                class="text-2xl font-bold text-slate-950"
+            >
+                Send us a message
+            </h2>
+
+            <p
+                class="mt-2 text-slate-600"
+            >
+                Fill in the form and we'll get back to you.
+            </p>
+
+
+            <!-- SUCCESS / ERROR MESSAGES -->
+
+            {% if messages %}
+
+                <div class="mt-6 space-y-3">
+
+                    {% for message in messages %}
+
+                        <div
+                            class="rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700"
+                        >
+                            {{ message }}
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- FORM -->
+
+            <form
+                method="POST"
+                class="mt-8 space-y-6"
+            >
+
+                {% csrf_token %}
+
+
+                <!-- NON-FIELD ERRORS -->
+
+                {% if form.non_field_errors %}
+
+                    <div
+                        class="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+                    >
+                        {{ form.non_field_errors }}
+                    </div>
+
+                {% endif %}
+
+
+                <!-- NAME -->
+
+                <div>
+
+                    <label
+                        for="{{ form.name.id_for_label }}"
+                        class="mb-2 block text-sm font-semibold text-slate-900"
+                    >
+                        Name
+                    </label>
+
+                    {{ form.name }}
+
+                    {% if form.name.errors %}
+
+                        <div
+                            class="mt-2 text-sm text-red-600"
+                        >
+                            {{ form.name.errors }}
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div>
+
+                    <label
+                        for="{{ form.email.id_for_label }}"
+                        class="mb-2 block text-sm font-semibold text-slate-900"
+                    >
+                        Email
+                    </label>
+
+                    {{ form.email }}
+
+                    {% if form.email.errors %}
+
+                        <div
+                            class="mt-2 text-sm text-red-600"
+                        >
+                            {{ form.email.errors }}
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div>
+
+                    <label
+                        for="{{ form.phone.id_for_label }}"
+                        class="mb-2 block text-sm font-semibold text-slate-900"
+                    >
+                        Phone
+                    </label>
+
+                    {{ form.phone }}
+
+                    {% if form.phone.errors %}
+
+                        <div
+                            class="mt-2 text-sm text-red-600"
+                        >
+                            {{ form.phone.errors }}
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- SUBJECT -->
+
+                <div>
+
+                    <label
+                        for="{{ form.subject.id_for_label }}"
+                        class="mb-2 block text-sm font-semibold text-slate-900"
+                    >
+                        Subject
+                    </label>
+
+                    {{ form.subject }}
+
+                    {% if form.subject.errors %}
+
+                        <div
+                            class="mt-2 text-sm text-red-600"
+                        >
+                            {{ form.subject.errors }}
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div>
+
+                    <label
+                        for="{{ form.message.id_for_label }}"
+                        class="mb-2 block text-sm font-semibold text-slate-900"
+                    >
+                        Message
+                    </label>
+
+                    {{ form.message }}
+
+                    {% if form.message.errors %}
+
+                        <div
+                            class="mt-2 text-sm text-red-600"
+                        >
+                            {{ form.message.errors }}
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                >
+                    Send Message
+
+                    <span class="ml-2">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section> <!-- ========================================= CTA ========================================= --> <section class="bg-blue-600">
+<div
+    class="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8"
+>
+
+    <div
+        class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between"
+    >
+
+        <div>
+
+            <span
+                class="text-sm font-bold tracking-[0.2em] text-blue-200"
+            >
+                HAVE A PROJECT IN MIND?
+            </span>
+
+
+            <h2
+                class="mt-3 text-3xl font-bold text-white sm:text-4xl"
+            >
+                Let's make it happen.
+            </h2>
+
+        </div>
+
+
+        <a
+            href="{% url 'contact' %}"
+            class="inline-flex items-center justify-center rounded-lg bg-white px-7 py-3.5 text-sm font-bold text-blue-600 transition hover:bg-blue-50"
+        >
+            Contact Us
+
+            <span class="ml-2">
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+{% endblock %}
