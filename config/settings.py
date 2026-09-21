@@ -27,18 +27,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # tI9jcSn2EAeBchlLOfndjfvcpxWj9sG8rTGFFBF2GsiStXn-owETwDuoxqjfKVb438o
 
-SECRET_KEY = os.environ.get(
-    "DJANGO_SECRET_KEY",
-    "django-insecure-development-only-key"
-)
+# SECRET_KEY = os.environ.get(
+#     "DJANGO_SECRET_KEY",
+#     "django-insecure-development-only-key"
+# )
+
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
+
+if not SECRET_KEY:
+    raise ValueError("DJANGO_SECRET_KEY environment variable is not set")
+
 # SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+# DEBUG = False
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
-
+# Zm-lM6MSJCj6I1cfCL0U09GJSG2CgTTmc0Eq-6iTOuYlV2owwhd0uC4OSHDusCBK9gkCkALHLOAOC93s9LPJtg
 
 # ALLOWED_HOSTS = ['*']
 

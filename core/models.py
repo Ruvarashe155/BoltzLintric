@@ -10,6 +10,11 @@ class Service(models.Model):
     short_description = models.TextField()
     description = models.TextField()
     icon = models.CharField(max_length=50, blank=True)
+    image = models.ImageField(
+        upload_to='services/',
+        blank=True,
+        null=True
+    )
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
